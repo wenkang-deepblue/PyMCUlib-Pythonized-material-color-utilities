@@ -1,0 +1,14 @@
+mcu-python/
+comparation.py
+comparation*.py
+*.txt
+txt_files/
+.DS_Store
+.DS_Store/
+.DS_Store/*
+__pycache__/
+dist/
+build/
+*.egg-info/
+pyproject.toml
+setup.py
