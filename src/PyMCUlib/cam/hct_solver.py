@@ -483,10 +483,10 @@ def solve_to_int(hue_degrees: float, chroma: float, lstar: float) -> Argb:
         the hue and L* will be sufficiently close, and chroma will be maximized.
     """
     if chroma < 0.0001 or lstar < 0.0001 or lstar > 99.9999:
-        from utils import int_from_lstar
+        from PyMCUlib.utils import int_from_lstar
         return int_from_lstar(lstar)
     
-    from utils import sanitize_degrees_double
+    from PyMCUlib.utils import sanitize_degrees_double
     hue_degrees = sanitize_degrees_double(hue_degrees)
     hue_radians = hue_degrees / 180 * PI
     y = y_from_lstar(lstar)
@@ -513,5 +513,5 @@ def solve_to_cam(hue_degrees: float, chroma: float, lstar: float):
         otherwise, the hue and L* will be sufficiently close, and chroma will be
         maximized.
     """
-    from cam import cam_from_int
+    from PyMCUlib.cam.cam import cam_from_int
     return cam_from_int(solve_to_int(hue_degrees, chroma, lstar))
