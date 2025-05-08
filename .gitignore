@@ -12,3 +12,8 @@ build/
 *.egg-info/
 pyproject.toml
 setup.py
+color_test.py
+*.json
+cpp/
+*.ts
+

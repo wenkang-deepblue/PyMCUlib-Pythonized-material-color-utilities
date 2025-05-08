@@ -28,6 +28,10 @@ from PyMCUlib.utils.utils import (
     sanitize_degrees_double, diff_degrees, rotation_direction, hex_from_argb,
     int_from_lstar, signum, lerp, matrix_multiply
 )
+from PyMCUlib.utils.image_utils import (
+    source_color_from_image, source_color_from_image_bytes,
+    source_color_from_file, source_color_from_bytes
+)
 
 # Quantize
 from PyMCUlib.quantize.lab import Lab, lab_from_int, int_from_lab
@@ -98,7 +102,9 @@ __all__ = [
     "alpha_from_int", "is_opaque", "linearized", "delinearized", "lstar_from_argb",
     "lstar_from_y", "y_from_lstar", "argb_from_linrgb", "sanitize_degrees_int",
     "sanitize_degrees_double", "diff_degrees", "rotation_direction", "hex_from_argb",
-    "int_from_lstar", "signum", "lerp", "matrix_multiply",
+    "argb_from_hex", "int_from_lstar", "signum", "lerp", "matrix_multiply", "WHITE_POINT_D65",
+    "source_color_from_image", "source_color_from_image_bytes",
+    "source_color_from_file", "source_color_from_bytes",
     
     # Quantize
     "Lab", "lab_from_int", "int_from_lab", "quantize_wu", 
