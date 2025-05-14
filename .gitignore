@@ -16,4 +16,8 @@ color_test.py
 *.json
 cpp/
 *.ts
-
+typescript/
+typescript*/
+*cpp_version*.py
+*spec*.py
+rename*.sh

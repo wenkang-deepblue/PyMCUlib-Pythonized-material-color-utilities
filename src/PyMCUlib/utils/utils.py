@@ -290,3 +290,31 @@ def matrix_multiply(input_vec: Vec3, matrix: list) -> Vec3:
     b = input_vec.a * matrix[1][0] + input_vec.b * matrix[1][1] + input_vec.c * matrix[1][2]
     c = input_vec.a * matrix[2][0] + input_vec.b * matrix[2][1] + input_vec.c * matrix[2][2]
     return Vec3(a, b, c)
+
+def clamp_int(min_value: int, max_value: int, value: int) -> int:
+    """
+    Clamps an integer between two integers.
+    
+    Args:
+        min_value: The minimum value
+        max_value: The maximum value
+        value: The value to clamp
+        
+    Returns:
+        The clamped value
+    """
+    return max(min_value, min(max_value, value))
+
+def clamp_double(min_value: float, max_value: float, value: float) -> float:
+    """
+    Clamps a floating-point number between two floating-point numbers.
+    
+    Args:
+        min_value: The minimum value
+        max_value: The maximum value
+        value: The value to clamp
+        
+    Returns:
+        The clamped value
+    """
+    return max(min_value, min(max_value, value))

@@ -8,7 +8,8 @@ from PyMCUlib.utils.utils import (
     alpha_from_int, is_opaque, linearized, delinearized, lstar_from_argb,
     lstar_from_y, y_from_lstar, argb_from_linrgb, sanitize_degrees_int,
     sanitize_degrees_double, diff_degrees, rotation_direction, hex_from_argb,
-    argb_from_hex, int_from_lstar, signum, lerp, matrix_multiply, WHITE_POINT_D65
+    argb_from_hex, int_from_lstar, signum, lerp, matrix_multiply, WHITE_POINT_D65,
+    clamp_int, clamp_double
 )
 
 __all__ = [
@@ -16,5 +17,6 @@ __all__ = [
     "alpha_from_int", "is_opaque", "linearized", "delinearized", "lstar_from_argb",
     "lstar_from_y", "y_from_lstar", "argb_from_linrgb", "sanitize_degrees_int",
     "sanitize_degrees_double", "diff_degrees", "rotation_direction", "hex_from_argb",
-    "argb_from_hex", "int_from_lstar", "signum", "lerp", "matrix_multiply", "WHITE_POINT_D65"
+    "argb_from_hex", "int_from_lstar", "signum", "lerp", "matrix_multiply", "WHITE_POINT_D65",
+    "clamp_int", "clamp_double"
 ]
