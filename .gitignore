@@ -1,0 +1,4 @@
+PyMCUlib/
+typescript*/
+*.txt
+.DS_Store
