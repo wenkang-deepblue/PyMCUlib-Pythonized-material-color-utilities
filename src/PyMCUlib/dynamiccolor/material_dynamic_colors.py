@@ -522,7 +522,7 @@ class MaterialDynamicColors:
             ) if is_fidelity(s) else
                 0.0 if is_monochrome(s) and s.is_dark else
                 100.0 if is_monochrome(s) else
-                90.0 if s.is_dark else 10.0,
+                90.0 if s.is_dark else 30.0,
             is_background=False,
             background=lambda s: MaterialDynamicColors.primary_container(),
             second_background=None,
@@ -607,7 +607,7 @@ class MaterialDynamicColors:
                   10.0 if is_monochrome(s) else
                   foreground_tone(MaterialDynamicColors.secondary_container().tone(s), 4.5)
                   if is_fidelity(s) else
-                  90.0 if s.is_dark else 10.0,
+                  90.0 if s.is_dark else 30.0,
             is_background=False,
             background=lambda s: MaterialDynamicColors.secondary_container(),
             second_background=None,
@@ -678,7 +678,7 @@ class MaterialDynamicColors:
                   100.0 if is_monochrome(s) else
                   foreground_tone(MaterialDynamicColors.tertiary_container().tone(s), 4.5)
                   if is_fidelity(s) else
-                  90.0 if s.is_dark else 10.0,
+                  90.0 if s.is_dark else 30.0,
             is_background=False,
             background=lambda s: MaterialDynamicColors.tertiary_container(),
             second_background=None,
@@ -738,7 +738,7 @@ class MaterialDynamicColors:
             palette=lambda s: s.error_palette,
             tone=lambda s: 90.0 if is_monochrome(s) and s.is_dark else
                   10.0 if is_monochrome(s) else
-                  90.0 if s.is_dark else 10.0,
+                  90.0 if s.is_dark else 30.0,
             is_background=False,
             background=lambda s: MaterialDynamicColors.error_container(),
             second_background=None,
