@@ -3,7 +3,7 @@
 
 ### NOTES: Python version: >=3.12.0
 
-This project is a Python port of Google's [Material Color Utilities](https://github.com/material-foundation/material-color-utilities) library, originally implemented in C++. The Material Color Utilities (MCU) library provides algorithms and utilities that power the dynamic color system introduced in Material Design 3.
+This project is a Python port of Google's [Material Color Utilities](https://github.com/material-foundation/material-color-utilities) library, originally implemented in **C++**. The Material Color Utilities (MCU) library provides algorithms and utilities that power the dynamic color system introduced in Material Design 3.
 
 ## Introduction
 
