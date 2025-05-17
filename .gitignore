@@ -1,4 +1,14 @@
-PyMCUlib/
+PyMCUlib_ts/
 typescript*/
 *.txt
 .DS_Store
+*reference.md
+*.toml
+setup.py
+*egg*/
+MCU_typescript/
+*backup*/
+color_roles_test*.json
+generate_color_roles*.py
+material-theme-builder.json
+__pycache__/
