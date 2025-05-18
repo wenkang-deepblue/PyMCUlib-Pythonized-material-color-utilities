@@ -1,12 +1,10 @@
 # color_spec_2021.py
 
-from typing import Callable, Optional, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from PyMCUlib.palettes.tonal_palette import TonalPalette
     from PyMCUlib.dynamiccolor.dynamic_color import DynamicColor
     from PyMCUlib.dynamiccolor.dynamic_scheme import DynamicScheme
-    from PyMCUlib.dynamiccolor.variant import Variant
 
 from PyMCUlib.dislike.dislike_analyzer import DislikeAnalyzer
 from PyMCUlib.hct.hct import Hct

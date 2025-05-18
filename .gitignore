@@ -13,3 +13,4 @@ generate_color_roles*.py
 material-theme-builder.json
 __pycache__/
 *cpp*/
+dist/

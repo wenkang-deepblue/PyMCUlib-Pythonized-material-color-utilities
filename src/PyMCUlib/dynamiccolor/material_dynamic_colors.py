@@ -3,17 +3,10 @@
 from typing import List, Optional, TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from PyMCUlib.dislike.dislike_analyzer import DislikeAnalyzer
-    from PyMCUlib.hct.hct import Hct
-    from PyMCUlib.palettes.tonal_palette import TonalPalette
-    from PyMCUlib.utils import math_utils
     from PyMCUlib.dynamiccolor.dynamic_scheme import DynamicScheme
 
 from PyMCUlib.dynamiccolor.color_spec_2025 import ColorSpecDelegateImpl2025
-from PyMCUlib.dynamiccolor.contrast_curve import ContrastCurve
 from PyMCUlib.dynamiccolor.dynamic_color import DynamicColor
-from PyMCUlib.dynamiccolor.tone_delta_pair import ToneDeltaPair
-from PyMCUlib.dynamiccolor.variant import Variant
 
 
 class MaterialDynamicColors:
