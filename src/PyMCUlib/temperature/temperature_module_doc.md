@@ -15,11 +15,14 @@ Temperature in this context refers to the perceptual warmth or coolness of a col
 The main class that provides color temperature utilities with lazy calculation and caching mechanisms.
 
 #### Key Methods and Properties:
-- `raw_temperature(color)`: Static method that calculates the cool-warm factor of a color
-- `complement`: Property that returns a color that aesthetically complements the input color
-- `analogous(count, divisions)`: Method that generates a set of analogous colors
-- `warmest`/`coldest`: Properties that return the warmest and coldest colors with same chroma/tone as input
-- `relative_temperature(hct)`: Method that calculates temperature relative to all colors with same chroma/tone
+- `raw_temperature(color: Hct) -> float`: Static method that computes the raw temperature of a color.  
+- `complement -> Hct`: Property that returns a color complementing the input color in terms of temperature.  
+- `analogous(count: int = 5, divisions: int = 12) -> List[Hct]`: Method that generates a list of analogous colors with the specified count and temperature divisions.  
+- `warmest -> Hct` / `coldest -> Hct`: Properties that return the warmest/coldest color sharing the same chroma and tone as the input.  
+- `relative_temperature(hct: Hct) -> float`: Method that computes the relative temperature (0–1) of a given HCT within the same chroma and tone range.  
+- `input_relative_temperature -> float`: Property that returns the relative temperature of the input color itself.  
+- `temps_by_hct -> Mapping[Hct, float]`: Property that returns a mapping from each HCT to its raw temperature.  
+- `hcts_by_hue -> List[Hct]`: Property that returns a list of all HCT colors, sorted by hue (0–360), sharing the same chroma and tone as the input.  
 
 ## Usage Examples
 ### Calculating Color Temperature

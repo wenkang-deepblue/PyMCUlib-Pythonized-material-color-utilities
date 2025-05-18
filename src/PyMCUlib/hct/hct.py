@@ -30,7 +30,7 @@ class Hct:
     """
 
     @classmethod
-    def from_hct(cls, hue, chroma, tone):
+    def from_hct(cls, hue: float, chroma: float, tone: float) -> "Hct":
         """
         Create an HCT color from hue, chroma, and tone.
         
@@ -47,7 +47,7 @@ class Hct:
         return cls(HctSolver.solve_to_int(hue, chroma, tone))
 
     @classmethod
-    def from_int(cls, argb):
+    def from_int(cls, argb: int) -> "Hct":
         """
         Create an HCT color from an ARGB integer.
         
@@ -59,7 +59,7 @@ class Hct:
         """
         return cls(argb)
 
-    def to_int(self):
+    def to_int(self) -> int:
         """
         Convert to ARGB integer representation.
         
@@ -69,7 +69,7 @@ class Hct:
         return self.argb
 
     @property
-    def hue(self):
+    def hue(self) -> float:
         """
         A number, in degrees, representing ex. red, orange, yellow, etc.
         Ranges from 0 <= hue < 360.
@@ -77,7 +77,7 @@ class Hct:
         return self.internal_hue
 
     @hue.setter
-    def hue(self, new_hue):
+    def hue(self, new_hue: float) -> None:
         """
         Set the hue of the color.
         
@@ -95,14 +95,14 @@ class Hct:
         )
 
     @property
-    def chroma(self):
+    def chroma(self) -> float:
         """
         Get the chroma of the color.
         """
         return self.internal_chroma
 
     @chroma.setter
-    def chroma(self, new_chroma):
+    def chroma(self, new_chroma: float) -> None:
         """
         Set the chroma of the color.
         
@@ -120,14 +120,14 @@ class Hct:
         )
 
     @property
-    def tone(self):
+    def tone(self) -> float:
         """
         Lightness. Ranges from 0 to 100.
         """
         return self.internal_tone
 
     @tone.setter
-    def tone(self, new_tone):
+    def tone(self, new_tone: float) -> None:
         """
         Set the tone of the color.
         
@@ -144,7 +144,7 @@ class Hct:
             ),
         )
 
-    def set_value(self, property_name, value):
+    def set_value(self, property_name: str, value: float) -> None:
         """
         Sets a property of the Hct object.
         
@@ -154,7 +154,7 @@ class Hct:
         """
         setattr(self, property_name, value)
 
-    def __str__(self):
+    def __str__(self) -> str:
         """
         Returns a string representation of the color.
         
@@ -164,7 +164,7 @@ class Hct:
         return f"HCT({int(self.hue)}, {int(self.chroma)}, {int(self.tone)})"
 
     @staticmethod
-    def is_blue(hue):
+    def is_blue(hue: float) -> bool:
         """
         Check if the hue represents a blue color.
         
@@ -177,7 +177,7 @@ class Hct:
         return hue >= 250 and hue < 270
 
     @staticmethod
-    def is_yellow(hue):
+    def is_yellow(hue: float) -> bool:
         """
         Check if the hue represents a yellow color.
         
@@ -190,7 +190,7 @@ class Hct:
         return hue >= 105 and hue < 125
 
     @staticmethod
-    def is_cyan(hue):
+    def is_cyan(hue: float) -> bool:
         """
         Check if the hue represents a cyan color.
         
@@ -202,7 +202,7 @@ class Hct:
         """
         return hue >= 170 and hue < 207
 
-    def __init__(self, argb):
+    def __init__(self, argb: int) -> None:
         """
         Create an HCT color from an ARGB integer.
         
@@ -215,7 +215,7 @@ class Hct:
         self.internal_tone = color_utils.lstar_from_argb(argb)
         self.argb = argb
 
-    def _set_internal_state(self, argb):
+    def _set_internal_state(self, argb: int) -> None:
         """
         Update the internal state of the HCT object.
         
@@ -228,7 +228,7 @@ class Hct:
         self.internal_tone = color_utils.lstar_from_argb(argb)
         self.argb = argb
 
-    def in_viewing_conditions(self, vc):
+    def in_viewing_conditions(self, vc: ViewingConditions) -> "Hct":
         """
         Translates a color into different ViewingConditions.
 

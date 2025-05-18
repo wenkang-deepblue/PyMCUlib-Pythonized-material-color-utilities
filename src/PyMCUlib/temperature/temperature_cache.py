@@ -8,7 +8,7 @@ generate data for calculations when needed.
 """
 
 import math
-from typing import List, Dict, Optional
+from typing import List, Optional, Mapping
 
 from PyMCUlib.hct.hct import Hct
 from PyMCUlib.utils import color_utils
@@ -33,7 +33,7 @@ class TemperatureCache:
         self.input = input_color
         self.hcts_by_temp_cache: List[Hct] = []
         self.hcts_by_hue_cache: List[Hct] = []
-        self.temps_by_hct_cache: Dict[Hct, float] = {}
+        self.temps_by_hct_cache: Mapping[Hct, float] = {}
         self.input_relative_temperature_cache: float = -1.0
         self.complement_cache: Optional[Hct] = None
 
@@ -264,7 +264,7 @@ class TemperatureCache:
         return self.input_relative_temperature_cache
 
     @property
-    def temps_by_hct(self) -> Dict[Hct, float]:
+    def temps_by_hct(self) -> Mapping[Hct, float]:
         """
         A Dict with keys of HCTs in hctsByTemp, values of raw temperature.
 

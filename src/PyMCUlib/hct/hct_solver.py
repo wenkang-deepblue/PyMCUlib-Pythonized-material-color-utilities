@@ -1,6 +1,7 @@
 # hct/hct_solver.py
 
 import math
+from typing import List
 from PyMCUlib.utils import color_utils
 from PyMCUlib.utils import math_utils
 from PyMCUlib.hct.cam16 import Cam16
@@ -138,7 +139,7 @@ class HctSolver:
     ]
 
     @staticmethod
-    def _sanitize_radians(angle):
+    def _sanitize_radians(angle: float) -> float:
         """
         Sanitizes a small enough angle in radians.
 
@@ -151,7 +152,7 @@ class HctSolver:
         return (angle + math.pi * 8) % (math.pi * 2)
 
     @staticmethod
-    def _true_delinearized(rgb_component):
+    def _true_delinearized(rgb_component: float) -> float:
         """
         Delinearizes an RGB component, returning a floating-point number.
 
@@ -170,7 +171,7 @@ class HctSolver:
         return delinearized * 255.0
 
     @staticmethod
-    def _chromatic_adaptation(component):
+    def _chromatic_adaptation(component: float) -> float:
         """
         Performs chromatic adaptation on a color component.
 
@@ -184,7 +185,7 @@ class HctSolver:
         return math_utils.signum(component) * 400.0 * af / (af + 27.13)
 
     @classmethod
-    def _hue_of(cls, linrgb):
+    def _hue_of(cls, linrgb: list[float]) -> float:
         """
         Returns the hue of a linear RGB color in CAM16.
 
@@ -205,7 +206,7 @@ class HctSolver:
         return math.atan2(b, a)
 
     @classmethod
-    def _are_in_cyclic_order(cls, a, b, c):
+    def _are_in_cyclic_order(cls, a: float, b: float, c: float) -> bool:
         """
         Checks if three angles are in cyclic order.
 
@@ -222,7 +223,7 @@ class HctSolver:
         return delta_ab < delta_ac
 
     @staticmethod
-    def _intercept(source, mid, target):
+    def _intercept(source: float, mid: float, target: float) -> float:
         """
         Solves the lerp equation.
 
@@ -237,7 +238,7 @@ class HctSolver:
         return (mid - source) / (target - source)
 
     @staticmethod
-    def _lerp_point(source, t, target):
+    def _lerp_point(source: List[float], t: float, target: List[float]) -> List[float]:
         """
         Performs linear interpolation between two points.
 
@@ -256,7 +257,8 @@ class HctSolver:
         ]
 
     @classmethod
-    def _set_coordinate(cls, source, coordinate, target, axis):
+    def _set_coordinate(cls, source: List[float], coordinate: float,
+                        target: List[float], axis: int) -> List[float]:
         """
         Intersects a segment with a plane.
 
@@ -274,7 +276,7 @@ class HctSolver:
         return cls._lerp_point(source, t, target)
 
     @staticmethod
-    def _is_bounded(x):
+    def _is_bounded(x: float) -> bool:
         """
         Checks if a value is between 0 and 100.
 
@@ -287,7 +289,7 @@ class HctSolver:
         return 0.0 <= x and x <= 100.0
 
     @classmethod
-    def _nth_vertex(cls, y, n):
+    def _nth_vertex(cls, y: float, n: int) -> List[float]:
         """
         Returns the nth possible vertex of the polygonal intersection.
 
@@ -331,7 +333,7 @@ class HctSolver:
                 return [-1.0, -1.0, -1.0]
 
     @classmethod
-    def _bisect_to_segment(cls, y, target_hue):
+    def _bisect_to_segment(cls, y: float, target_hue: float) -> List[List[float]]:
         """
         Finds the segment containing the desired color.
 
@@ -372,7 +374,7 @@ class HctSolver:
         return [left, right]
 
     @staticmethod
-    def _midpoint(a, b):
+    def _midpoint(a: List[float], b: List[float]) -> List[float]:
         """
         Calculates the midpoint of two points.
 
@@ -390,7 +392,7 @@ class HctSolver:
         ]
 
     @staticmethod
-    def _critical_plane_below(x):
+    def _critical_plane_below(x: float) -> int:
         """
         Finds the critical plane below a given value.
 
@@ -403,7 +405,7 @@ class HctSolver:
         return math.floor(x - 0.5)
 
     @staticmethod
-    def _critical_plane_above(x):
+    def _critical_plane_above(x: float) -> int:
         """
         Finds the critical plane above a given value.
 
@@ -416,7 +418,7 @@ class HctSolver:
         return math.ceil(x - 0.5)
 
     @classmethod
-    def _bisect_to_limit(cls, y, target_hue):
+    def _bisect_to_limit(cls, y: float, target_hue: float) -> List[float]:
         """
         Finds a color with the given Y and hue on the boundary of the cube.
 
@@ -463,7 +465,7 @@ class HctSolver:
         return cls._midpoint(left, right)
 
     @staticmethod
-    def _inverse_chromatic_adaptation(adapted):
+    def _inverse_chromatic_adaptation(adapted: float) -> float:
         """
         Inversely adapts a color component.
 
@@ -478,7 +480,7 @@ class HctSolver:
         return math_utils.signum(adapted) * math.pow(base, 1.0 / 0.42)
 
     @classmethod
-    def _find_result_by_j(cls, hue_radians, chroma, y):
+    def _find_result_by_j(cls, hue_radians: float, chroma: float, y: float) -> int:
         """
         Finds a color with the given hue, chroma, and Y.
 
@@ -547,7 +549,7 @@ class HctSolver:
         return 0
 
     @classmethod
-    def solve_to_int(cls, hue_degrees, chroma, lstar):
+    def solve_to_int(cls, hue_degrees: float, chroma: float, lstar: float) -> int:
         """
         Finds an sRGB color with the given hue, chroma, and L*, if possible.
 
@@ -573,7 +575,7 @@ class HctSolver:
         return color_utils.argb_from_linrgb(linrgb)
 
     @classmethod
-    def solve_to_cam(cls, hue_degrees, chroma, lstar):
+    def solve_to_cam(cls, hue_degrees: float, chroma: float, lstar: float) -> Cam16:
         """
         Finds an sRGB color with the given hue, chroma, and L*, if possible.
 

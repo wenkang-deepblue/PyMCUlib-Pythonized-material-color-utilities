@@ -32,8 +32,14 @@ class ViewingConditions:
     DEFAULT = None  # Initialized by make() method
     
     @classmethod
-    def make(cls, white_point=None, adapting_luminance=..., background_lstar=50.0,
-             surround=2.0, discounting_illuminant=False):
+    def make(
+        cls,
+        white_point: Optional[List[float]] = None,
+        adapting_luminance: float = (200.0 / math.pi) * color_utils.y_from_lstar(50.0) / 100.0,
+        background_lstar: float = 50.0,
+        surround: float = 2.0,
+        discounting_illuminant: bool = False,
+    ) -> "ViewingConditions":
         """Create ViewingConditions from physically relevant parameters"""
 ```
 Attributes:
@@ -57,22 +63,33 @@ class Cam16:
     (J*, a*, b*) for measuring color distances.
     """
     
-    def __init__(self, hue, chroma, j, q, m, s, jstar, astar, bstar):
+    def __init__(
+        self,
+        hue: float,
+        chroma: float,
+        j: float,
+        q: float,
+        m: float,
+        s: float,
+        jstar: float,
+        astar: float,
+        bstar: float,
+    ) -> None:
         """Constructor with all CAM16 dimensions"""
     
     @classmethod
-    def from_int(cls, argb):
+    def from_int(cls, argb: int) -> "Cam16":
         """Create CAM16 from ARGB integer"""
     
     @classmethod
-    def from_jch(cls, j, c, h):
+    def from_jch(cls, j: float, c: float, h: float) -> "Cam16":
         """Create CAM16 from lightness, chroma, and hue"""
         
     @classmethod
-    def from_ucs(cls, jstar, astar, bstar):
+    def from_ucs(cls, jstar: float, astar: float, bstar: float) -> "Cam16":
         """Create CAM16 from CAM16-UCS coordinates"""
         
-    def to_int(self):
+    def to_int(self) -> int:
         """Convert to ARGB integer"""
 ```
 ### HctSolver
@@ -84,11 +101,11 @@ class HctSolver:
     """
     
     @classmethod
-    def solve_to_int(cls, hue_degrees, chroma, lstar):
+    def solve_to_int(cls, hue_degrees: float, chroma: float, lstar: float) -> int:
         """Find an sRGB color with given hue, chroma, and L*"""
     
     @classmethod
-    def solve_to_cam(cls, hue_degrees, chroma, lstar):
+    def solve_to_cam(cls, hue_degrees: float, chroma: float, lstar: float) -> Cam16:
         """Find a CAM16 color with given hue, chroma, and L*"""
 ```
 ### Hct
@@ -100,17 +117,17 @@ class Hct:
     """
     
     @classmethod
-    def from_hct(cls, hue, chroma, tone):
+    def from_hct(cls, hue: float, chroma: float, tone: float) -> "Hct":
         """Create HCT color from hue, chroma, and tone values"""
         
     @classmethod
-    def from_int(cls, argb):
+    def from_int(cls, argb: int) -> "Hct":
         """Create HCT color from ARGB integer"""
         
-    def to_int(self):
+    def to_int(self) -> int:
         """Convert to ARGB integer"""
         
-    def in_viewing_conditions(self, vc):
+    def in_viewing_conditions(self, vc: ViewingConditions) -> "Hct":
         """Translate color into different viewing conditions"""
 ```
 ## Main Function Categories

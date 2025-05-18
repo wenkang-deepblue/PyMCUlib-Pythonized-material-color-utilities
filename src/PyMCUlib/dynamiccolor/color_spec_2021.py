@@ -328,7 +328,7 @@ class ColorSpecDelegateImpl2021(ColorSpecDelegate):
                 self.primary_container(), self.primary(), 10, 'nearer', False),
         })
 
-    def primary_dim(self) -> Optional['DynamicColor']:
+    def primary_dim(self) -> 'DynamicColor':
         return None
 
     def on_primary(self) -> 'DynamicColor':
@@ -397,7 +397,7 @@ class ColorSpecDelegateImpl2021(ColorSpecDelegate):
                 self.secondary_container(), self.secondary(), 10, 'nearer', False),
         })
 
-    def secondary_dim(self) -> Optional['DynamicColor']:
+    def secondary_dim(self) -> 'DynamicColor':
         return None
 
     def on_secondary(self) -> 'DynamicColor':
@@ -458,7 +458,7 @@ class ColorSpecDelegateImpl2021(ColorSpecDelegate):
                 self.tertiary_container(), self.tertiary(), 10, 'nearer', False),
         })
 
-    def tertiary_dim(self) -> Optional['DynamicColor']:
+    def tertiary_dim(self) -> 'DynamicColor':
         return None
 
     def on_tertiary(self) -> 'DynamicColor':
@@ -518,7 +518,7 @@ class ColorSpecDelegateImpl2021(ColorSpecDelegate):
                 self.error_container(), self.error(), 10, 'nearer', False),
         })
 
-    def error_dim(self) -> Optional['DynamicColor']:
+    def error_dim(self) -> 'DynamicColor':
         return None
 
     def on_error(self) -> 'DynamicColor':

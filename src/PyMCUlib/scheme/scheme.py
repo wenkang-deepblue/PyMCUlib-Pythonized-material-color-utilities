@@ -1,5 +1,6 @@
 # scheme/scheme.py
 
+from typing import Dict
 from PyMCUlib.palettes.core_palette import CorePalette
 
 
@@ -10,7 +11,7 @@ class Scheme:
     Represents a Material color scheme, a mapping of color roles to colors.
     """
 
-    def __init__(self, props):
+    def __init__(self, props: Dict[str, int]) -> None:
         """
         Private constructor for Scheme class.
 
@@ -302,7 +303,7 @@ class Scheme:
             "inverse_primary": core.a1.tone(40)
         })
 
-    def to_json(self):
+    def to_json(self) -> Dict[str, int]:
         """
         Convert the scheme to a JSON serializable dictionary.
 

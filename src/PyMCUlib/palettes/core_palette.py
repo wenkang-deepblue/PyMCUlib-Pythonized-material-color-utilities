@@ -40,7 +40,7 @@ class CorePalette:
     Use CorePalettes for core palettes container class.
     """
 
-    def __init__(self, argb: int, is_content: bool):
+    def __init__(self, argb: int, is_content: bool) -> None:
         """
         Initialize a CorePalette with a color and content flag.
         

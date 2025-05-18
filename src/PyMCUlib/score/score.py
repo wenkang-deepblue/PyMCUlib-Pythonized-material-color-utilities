@@ -1,6 +1,6 @@
 # score/score.py
 
-from typing import Dict, List, Optional, TypedDict
+from typing import List, Mapping, Optional, TypedDict
 from PyMCUlib.hct.hct import Hct
 from PyMCUlib.utils import math_utils
 
@@ -46,9 +46,11 @@ class Score:
         raise NotImplementedError("Score cannot be instantiated")
     
     @classmethod
-    def score(cls, 
-             colors_to_population: Dict[int, int], 
-             options: Optional[Dict] = None) -> List[int]:
+    def score(
+        cls,
+        colors_to_population: Mapping[int, int],
+        options: Optional[ScoreOptions] = None
+    ) -> List[int]:
         """
         Given a map with keys of colors and values of how often the color appears,
         rank the colors based on suitability for being used for a UI theme.

@@ -3,6 +3,7 @@
 Represents an Android 12 color scheme, a mapping of color roles to colors.
 """
 
+from typing import Dict
 from PyMCUlib.palettes.core_palette import CorePalette
 
 
@@ -11,7 +12,7 @@ class SchemeAndroid:
     Represents an Android 12 color scheme, a mapping of color roles to colors.
     """
 
-    def __init__(self, props):
+    def __init__(self, props: Dict[str, int]):
         """
         Private constructor for SchemeAndroid class.
 
@@ -279,7 +280,7 @@ class SchemeAndroid:
             "scrim": core.n1.tone(80),
         })
 
-    def to_json(self):
+    def to_json(self) -> Dict[str, int]:
         """
         Convert the scheme to a JSON serializable dictionary.
 

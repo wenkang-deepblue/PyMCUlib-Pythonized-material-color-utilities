@@ -1,6 +1,7 @@
 # hct/viewing_conditions.py
 
 import math
+from typing import List, Optional
 from PyMCUlib.utils import color_utils
 from PyMCUlib.utils import math_utils
 
@@ -20,12 +21,14 @@ class ViewingConditions:
     """
 
     @classmethod
-    def make(cls,
-             white_point=None,
-             adapting_luminance=(200.0 / math.pi) * color_utils.y_from_lstar(50.0) / 100.0,
-             background_lstar=50.0,
-             surround=2.0,
-             discounting_illuminant=False):
+    def make(
+        cls,
+        white_point: Optional[List[float]] = None,
+        adapting_luminance: float = (200.0 / math.pi) * color_utils.y_from_lstar(50.0) / 100.0,
+        background_lstar: float = 50.0,
+        surround: float = 2.0,
+        discounting_illuminant: bool = False,
+    ) -> "ViewingConditions":
         """
         Create ViewingConditions from a simple, physically relevant, set of
         parameters.
@@ -102,7 +105,7 @@ class ViewingConditions:
 
         return cls(n, aw, nbb, ncb, c, nc, rgb_d, fl, math.pow(fl, 0.25), z)
 
-    def __init__(self, n, aw, nbb, ncb, c, nc, rgb_d, fl, fl_root, z):
+    def __init__(self, n: float, aw: float, nbb: float, ncb: float, c: float, nc: float, rgb_d: List[float], fl: float, fl_root: float, z: float) -> None:
         """
         Parameters are intermediate values of the CAM16 conversion process. Their
         names are shorthand for technical color science terminology, this class

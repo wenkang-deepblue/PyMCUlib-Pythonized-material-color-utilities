@@ -37,7 +37,7 @@ Static class for scoring and ranking colors.
 - `CUTOFF_EXCITED_PROPORTION`: Minimum usage proportion for a color to be considered (0.01)
 
 **Methods:**
-- `score(colors_to_population, options)`: Ranks colors based on suitability for UI themes
+- `score(colors_to_population: Mapping[int, int], options: ScoreOptions = None) -> List[int]`: Ranks colors based on suitability for UI themes
 
 ## Usage Examples
 

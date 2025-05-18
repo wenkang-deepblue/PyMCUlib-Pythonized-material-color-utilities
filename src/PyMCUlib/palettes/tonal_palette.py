@@ -14,7 +14,7 @@ class TonalPalette:
     chroma, but vary in tone.
     """
 
-    def __init__(self, hue: float, chroma: float, key_color: Hct):
+    def __init__(self, hue: float, chroma: float, key_color: Hct) -> None:
         """
         Initialize a TonalPalette with specific hue, chroma, and key color.
         
@@ -102,7 +102,7 @@ class KeyColor:
     Key color is a color that represents the hue and chroma of a tonal palette
     """
 
-    def __init__(self, hue: float, requested_chroma: float):
+    def __init__(self, hue: float, requested_chroma: float) -> None:
         """
         Initialize a KeyColor with specific hue and requested chroma.
         

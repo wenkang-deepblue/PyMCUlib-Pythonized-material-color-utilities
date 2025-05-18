@@ -14,7 +14,7 @@ Mathematical approach to finding optimal colors within sRGB gamut
 A convenience class for retrieving colors that are constant in hue and chroma, but vary in tone. It provides a harmonious range of colors from light to dark.
 ```python
 class TonalPalette:
-    def __init__(self, hue: float, chroma: float, key_color: Hct)
+    def __init__(self, hue: float, chroma: float, key_color: Hct) -> None
     
     @staticmethod
     def from_int(argb: int) -> 'TonalPalette'
@@ -33,7 +33,7 @@ class TonalPalette:
 Represents the hue and chroma of a tonal palette. Uses binary search to find the most appropriate tone for a requested chroma.
 ```python
 class KeyColor:
-    def __init__(self, hue: float, requested_chroma: float)
+    def __init__(self, hue: float, requested_chroma: float) -> None
     
     def create(self) -> Hct
     
@@ -43,7 +43,7 @@ class KeyColor:
 An intermediate concept between a key color and a full color scheme. This class is deprecated; use `CorePalettes` or `DynamicScheme` for theme generation. Generates 3 accent tonal palettes (a1, a2, a3), 2 neutral tonal palettes (n1, n2), and a fixed error palette (error, hue=25°, chroma=84).
 ```python
 class CorePalette:
-    def __init__(self, argb: int, is_content: bool)
+    def __init__(self, argb: int, is_content: bool) -> None
     
     @staticmethod
     def of(argb: int) -> 'CorePalette'
@@ -67,7 +67,8 @@ class CorePalettes:
             secondary: TonalPalette,
             tertiary: TonalPalette,
             neutral: TonalPalette,
-            neutral_variant: TonalPalette)
+            neutral_variant: TonalPalette
+    ) -> None
 ```
 ## Main Function Categories
 

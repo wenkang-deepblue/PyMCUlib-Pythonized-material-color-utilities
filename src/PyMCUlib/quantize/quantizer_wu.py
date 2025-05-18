@@ -30,7 +30,7 @@ class Box:
         b0: int = 0,
         b1: int = 0,
         vol: int = 0
-    ):
+    ) -> None:
         self.r0 = r0
         self.r1 = r1
         self.g0 = g0
@@ -44,7 +44,7 @@ class CreateBoxesResult:
     """
     Represents final result of Wu algorithm.
     """
-    def __init__(self, requested_count: int, result_count: int):
+    def __init__(self, requested_count: int, result_count: int) -> None:
         """
         Args:
             requested_count: how many colors the caller asked to be returned from
@@ -61,7 +61,7 @@ class MaximizeResult:
     Represents the result of calculating where to cut an existing box in such
     a way to maximize variance between the two new boxes created by a cut.
     """
-    def __init__(self, cut_location: int, maximum: float):
+    def __init__(self, cut_location: int, maximum: float) -> None:
         self.cut_location = cut_location
         self.maximum = maximum
 
@@ -84,7 +84,7 @@ class QuantizerWu:
         moments_b: List[int] = None,
         moments: List[float] = None,
         cubes: List[Box] = None
-    ):
+    ) -> None:
         self.weights = weights if weights is not None else []
         self.moments_r = moments_r if moments_r is not None else []
         self.moments_g = moments_g if moments_g is not None else []
@@ -385,7 +385,7 @@ class QuantizerWu:
                 
         return MaximizeResult(cut, max_val)
 
-    def _volume(self, cube: Box, moment: List) -> int:
+    def _volume(self, cube: Box, moment: List[float]) -> float:
         """
         Calculates the volume of a box.
         """
@@ -400,7 +400,7 @@ class QuantizerWu:
             - moment[self._get_index(cube.r0, cube.g0, cube.b0)]
         )
 
-    def _bottom(self, cube: Box, direction: str, moment: List) -> int:
+    def _bottom(self, cube: Box, direction: str, moment: List[float]) -> float:
         """
         Calculates the bottom of a box.
         """
@@ -428,7 +428,7 @@ class QuantizerWu:
         else:
             raise ValueError(f"unexpected direction {direction}")
 
-    def _top(self, cube: Box, direction: str, position: int, moment: List) -> int:
+    def _top(self, cube: Box, direction: str, position: int, moment: List[float]) -> float:
         """
         Calculates the top of a box.
         """

@@ -25,7 +25,10 @@ class Cam16:
     """
 
     def __init__(
-            self, hue, chroma, j, q, m, s, jstar, astar, bstar):
+       self,
+       hue: float, chroma: float, j: float, q: float,
+       m: float, s: float, jstar: float, astar: float, bstar: float
+    ) -> None:
         """
         All of the CAM16 dimensions can be calculated from 3 of the dimensions, in
         the following combinations:
@@ -57,7 +60,7 @@ class Cam16:
         self.astar = astar
         self.bstar = bstar
     
-    def distance(self, other):
+    def distance(self, other: 'Cam16') -> float:
         """
         CAM16 instances also have coordinates in the CAM16-UCS space, called J*,
         a*, b*, or jstar, astar, bstar in code. CAM16-UCS is included in the CAM16
@@ -77,7 +80,7 @@ class Cam16:
         return d_e
     
     @classmethod
-    def from_int(cls, argb):
+    def from_int(cls, argb: int) -> 'Cam16':
         """
         Creates a CAM16 color from an ARGB integer.
 
@@ -90,7 +93,11 @@ class Cam16:
         return cls.from_int_in_viewing_conditions(argb, ViewingConditions.DEFAULT)
     
     @classmethod
-    def from_int_in_viewing_conditions(cls, argb, viewing_conditions):
+    def from_int_in_viewing_conditions(
+        cls,
+        argb: int,
+        viewing_conditions: ViewingConditions
+    ) -> 'Cam16':
         """
         Creates a CAM16 color from an ARGB integer and viewing conditions.
 
@@ -173,7 +180,12 @@ class Cam16:
         return cls(hue, c, j, q, m, s, jstar, astar, bstar)
     
     @classmethod
-    def from_jch(cls, j, c, h):
+    def from_jch(
+        cls,
+        j: float,
+        c: float,
+        h: float
+    ) -> 'Cam16':
         """
         Creates a CAM16 color from J, C, and h in default viewing conditions.
 
@@ -188,7 +200,13 @@ class Cam16:
         return cls.from_jch_in_viewing_conditions(j, c, h, ViewingConditions.DEFAULT)
     
     @classmethod
-    def from_jch_in_viewing_conditions(cls, j, c, h, viewing_conditions):
+    def from_jch_in_viewing_conditions(
+        cls,
+        j: float,
+        c: float,
+        h: float,
+        viewing_conditions: ViewingConditions
+    ) -> 'Cam16':
         """
         Creates a CAM16 color from J, C, and h in the given viewing conditions.
 
@@ -222,7 +240,12 @@ class Cam16:
         return cls(h, c, j, q, m, s, jstar, astar, bstar)
     
     @classmethod
-    def from_ucs(cls, jstar, astar, bstar):
+    def from_ucs(
+        cls,
+        jstar: float,
+        astar: float,
+        bstar: float
+    ) -> 'Cam16':
         """
         Creates a CAM16 color from CAM16-UCS coordinates in default viewing conditions.
 
@@ -240,7 +263,13 @@ class Cam16:
             jstar, astar, bstar, ViewingConditions.DEFAULT)
     
     @classmethod
-    def from_ucs_in_viewing_conditions(cls, jstar, astar, bstar, viewing_conditions):
+    def from_ucs_in_viewing_conditions(
+        cls,
+        jstar: float,
+        astar: float,
+        bstar: float,
+        viewing_conditions: ViewingConditions
+    ) -> 'Cam16':
         """
         Creates a CAM16 color from CAM16-UCS coordinates in the given viewing conditions.
 
@@ -268,7 +297,7 @@ class Cam16:
         
         return cls.from_jch_in_viewing_conditions(j, c, h, viewing_conditions)
     
-    def to_int(self):
+    def to_int(self) -> int:
         """
         Converts this color to ARGB format.
 
@@ -279,7 +308,7 @@ class Cam16:
         """
         return self.viewed(ViewingConditions.DEFAULT)
     
-    def viewed(self, viewing_conditions):
+    def viewed(self, viewing_conditions: ViewingConditions) -> int:
         """
         Converts this color to ARGB format.
 
@@ -346,7 +375,13 @@ class Cam16:
         return argb
     
     @classmethod
-    def from_xyz_in_viewing_conditions(cls, x, y, z, viewing_conditions):
+    def from_xyz_in_viewing_conditions(
+        cls,
+        x: float,
+        y: float,
+        z: float,
+        viewing_conditions: ViewingConditions
+    ) -> 'Cam16':
         """
         Creates a CAM16 color from XYZ coordinates in the given viewing conditions.
 
@@ -436,7 +471,7 @@ class Cam16:
         
         return cls(hue, C, J, Q, M, s, jstar, astar, bstar)
     
-    def xyz_in_viewing_conditions(self, viewing_conditions):
+    def xyz_in_viewing_conditions(self, viewing_conditions: ViewingConditions) -> list[float]:
         """
         Converts a CAM16 color to XYZ coordinates in the given viewing conditions.
 

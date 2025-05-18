@@ -22,7 +22,7 @@ class CorePalettes:
             secondary: TonalPalette,
             tertiary: TonalPalette,
             neutral: TonalPalette,
-            neutral_variant: TonalPalette):
+            neutral_variant: TonalPalette) -> None:
         """
         Initialize a CorePalettes with tonally-consistent palettes.
         

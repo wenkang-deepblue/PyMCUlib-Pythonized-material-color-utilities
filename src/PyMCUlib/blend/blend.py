@@ -16,7 +16,7 @@ class Blend:
     """
 
     @staticmethod
-    def harmonize(design_color, source_color):
+    def harmonize(design_color: int, source_color: int) -> int:
         """
         Blend the design color's HCT hue towards the key color's HCT
         hue, in a way that leaves the original color recognizable and
@@ -41,7 +41,7 @@ class Blend:
         return Hct.from_hct(output_hue, from_hct.chroma, from_hct.tone).to_int()
 
     @staticmethod
-    def hct_hue(from_color, to_color, amount):
+    def hct_hue(from_color: int, to_color: int, amount: float) -> int:
         """
         Blends hue from one color into another. The chroma and tone of
         the original color are maintained.
@@ -66,7 +66,7 @@ class Blend:
         return blended.to_int()
 
     @staticmethod
-    def cam16_ucs(from_color, to_color, amount):
+    def cam16_ucs(from_color: int, to_color: int, amount: float) -> int:
         """
         Blend in CAM16-UCS space.
 
