@@ -4,8 +4,11 @@
 
 ### Based on official MCU-TypeScript 2025 most updated version
 
-### NOTES: Python version: >=3.12.0
+### Python version: >=3.12.0
 
+**_Note:_** In 2025, the official Material Color Utilities library was updated to version 2025 as TypeScript & Java & Dart implementation. This Python package has since been reimplemented based on that latest TypeScript version ([main-ts](https://github.com/wenkang-deepblue/PyMCUlib-Pythonized-material-color-utilities)) and is published on PyPI as the default `PyMCUlib` package (install via `pip install PyMCUlib`). The original C++-based Python port ([main-cpp](https://github.com/wenkang-deepblue/PyMCUlib-Pythonized-material-color-utilities/tree/main-cpp)) has been renamed `PyMCUlib-cpp` and is available via `pip install PyMCUlib-cpp`. Please choose the package that best fits your needs.
+
+## Overview
 This project is a Python port of Google's [Material Color Utilities](https://github.com/material-foundation/material-color-utilities) library, with this version being specifically ported from the official **TypeScript** implementation. The Material Color Utilities (MCU) library provides algorithms and utilities that power the dynamic color system introduced in Material Design 3.
 
 ## Introduction
