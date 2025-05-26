@@ -2,7 +2,7 @@
 
 # PyMCUlib - Material Color Utilities Lib for Python (Ported from Official MCU of TypeScript version)
 
-### Based on 2025 most updated version
+### Based on official MCU-TypeScript 2025 most updated version
 
 ### NOTES: Python version: >=3.12.0
 
@@ -389,3 +389,6 @@ This is a personal port created for learning and usage in Python projects. While
 ## Acknowledgments
 
 Special thanks to the Google Material Color Utilities team for creating this powerful library, for their original C++ and TypeScript implementations, and for making it openly available.
+
+## Very Important
+I have adopted this lib in my own project and it works good. But I didn't verify all modules in my own project. Please report any issue via this [repository issues](https://github.com/wenkang-deepblue/PyMCUlib-Pythonized-material-color-utilities/issues) to let me know bugs. Thank you very much!

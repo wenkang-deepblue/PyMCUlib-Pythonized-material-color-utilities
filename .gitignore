@@ -14,3 +14,5 @@ material-theme-builder.json
 __pycache__/
 *cpp*/
 dist/
+.pypirc
+*test*.*
