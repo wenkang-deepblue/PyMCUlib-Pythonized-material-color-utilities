@@ -1,7 +1,7 @@
 # contrast_test.py
 
 import unittest
-from PyMCUlib.contrast.contrast import (
+from PyMCUlib_cpp.contrast.contrast import (
     ratio_of_tones,
     lighter,
     darker,

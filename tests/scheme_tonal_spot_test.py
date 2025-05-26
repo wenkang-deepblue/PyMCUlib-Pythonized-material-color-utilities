@@ -1,11 +1,11 @@
 # test_scheme_tonal_spot.py
 
 import unittest
-from PyMCUlib.cam.hct import Hct
-from PyMCUlib.scheme.tonal_spot import SchemeTonalSpot
-from PyMCUlib.dynamiccolor.variant import Variant
-from PyMCUlib.utils.utils import sanitize_degrees_double
-from PyMCUlib.dynamiccolor.material_dynamic_colors import MaterialDynamicColors
+from PyMCUlib_cpp.cam.hct import Hct
+from PyMCUlib_cpp.scheme.tonal_spot import SchemeTonalSpot
+from PyMCUlib_cpp.dynamiccolor.variant import Variant
+from PyMCUlib_cpp.utils.utils import sanitize_degrees_double
+from PyMCUlib_cpp.dynamiccolor.material_dynamic_colors import MaterialDynamicColors
 
 class TestSchemeTonalSpot(unittest.TestCase):
     def test_dark_theme(self):

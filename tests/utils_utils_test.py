@@ -2,7 +2,7 @@
 
 import unittest
 import math
-from PyMCUlib.utils.utils import (
+from PyMCUlib_cpp.utils.utils import (
     Argb, Vec3, PI, argb_from_rgb, red_from_int, green_from_int, blue_from_int,
     alpha_from_int, is_opaque, linearized, delinearized, lstar_from_argb,
     lstar_from_y, y_from_lstar, argb_from_linrgb, sanitize_degrees_int,

@@ -1,8 +1,8 @@
 # dislike_test.py
 
 import unittest
-from PyMCUlib.cam.hct import Hct
-from PyMCUlib.dislike.dislike import is_disliked, fix_if_disliked
+from PyMCUlib_cpp.cam.hct import Hct
+from PyMCUlib_cpp.dislike.dislike import is_disliked, fix_if_disliked
 
 class DislikeTest(unittest.TestCase):
     

@@ -1,10 +1,10 @@
 # scheme_neutral_test.py
 
 import unittest
-from PyMCUlib.cam.hct import Hct
-from PyMCUlib.scheme.neutral import SchemeNeutral
-from PyMCUlib.dynamiccolor.material_dynamic_colors import MaterialDynamicColors
-from PyMCUlib.dynamiccolor.variant import Variant
+from PyMCUlib_cpp.cam.hct import Hct
+from PyMCUlib_cpp.scheme.neutral import SchemeNeutral
+from PyMCUlib_cpp.dynamiccolor.material_dynamic_colors import MaterialDynamicColors
+from PyMCUlib_cpp.dynamiccolor.variant import Variant
 
 
 class SchemeNeutralTest(unittest.TestCase):

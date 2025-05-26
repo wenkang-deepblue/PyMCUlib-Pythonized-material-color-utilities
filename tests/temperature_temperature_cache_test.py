@@ -1,8 +1,8 @@
 # temperature_test.py
 
 import unittest
-from PyMCUlib.cam.hct import Hct
-from PyMCUlib.temperature.temperature_cache import TemperatureCache
+from PyMCUlib_cpp.cam.hct import Hct
+from PyMCUlib_cpp.temperature.temperature_cache import TemperatureCache
 
 class TemperatureCacheTest(unittest.TestCase):
     

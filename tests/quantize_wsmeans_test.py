@@ -1,7 +1,7 @@
 # wsmeans_test.py
 
 import unittest
-from PyMCUlib.quantize.wsmeans import quantize_wsmeans
+from PyMCUlib_cpp.quantize.wsmeans import quantize_wsmeans
 
 class WsmeansTest(unittest.TestCase):
     def test_full_image(self):

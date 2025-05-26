@@ -2,9 +2,9 @@
 
 import unittest
 import itertools
-from PyMCUlib.cam.hct import Hct
-from PyMCUlib.cam.cam import cam_from_int
-from PyMCUlib.utils.utils import lstar_from_argb
+from PyMCUlib_cpp.cam.hct import Hct
+from PyMCUlib_cpp.cam.cam import cam_from_int
+from PyMCUlib_cpp.utils.utils import lstar_from_argb
 
 def is_on_boundary(rgb_component):
     """Returns whether the RGB component is on the boundary (0 or 255)."""

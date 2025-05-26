@@ -1,8 +1,8 @@
 # blend_test.py
 
 import unittest
-from PyMCUlib.blend.blend import blend_hct_hue
-from PyMCUlib.utils.utils import hex_from_argb
+from PyMCUlib_cpp.blend.blend import blend_hct_hue
+from PyMCUlib_cpp.utils.utils import hex_from_argb
 
 class BlendTest(unittest.TestCase):
     def test_red_to_blue(self):

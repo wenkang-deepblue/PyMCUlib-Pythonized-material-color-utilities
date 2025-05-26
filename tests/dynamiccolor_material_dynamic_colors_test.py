@@ -1,11 +1,11 @@
 # test_material_dynamic_colors.py
 
 import unittest
-from PyMCUlib.cam.hct import Hct
-from PyMCUlib.dynamiccolor.variant import Variant
-from PyMCUlib.dynamiccolor.dynamic_scheme import DynamicScheme
-from PyMCUlib.palettes.tones import TonalPalette
-from PyMCUlib.dynamiccolor.material_dynamic_colors import (
+from PyMCUlib_cpp.cam.hct import Hct
+from PyMCUlib_cpp.dynamiccolor.variant import Variant
+from PyMCUlib_cpp.dynamiccolor.dynamic_scheme import DynamicScheme
+from PyMCUlib_cpp.palettes.tones import TonalPalette
+from PyMCUlib_cpp.dynamiccolor.material_dynamic_colors import (
     MaterialDynamicColors, is_fidelity, is_monochrome
 )
 

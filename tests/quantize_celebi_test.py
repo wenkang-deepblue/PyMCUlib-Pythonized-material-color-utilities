@@ -2,7 +2,7 @@
 
 import unittest
 import time
-from PyMCUlib.quantize.celebi import quantize_celebi
+from PyMCUlib_cpp.quantize.celebi import quantize_celebi
 
 class CelebiTest(unittest.TestCase):
     

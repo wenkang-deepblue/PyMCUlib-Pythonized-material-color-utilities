@@ -1,7 +1,7 @@
 # wu_test.py
 
 import unittest
-from PyMCUlib.quantize.wu import quantize_wu
+from PyMCUlib_cpp.quantize.wu import quantize_wu
 
 class WuTest(unittest.TestCase):
     def test_full_image(self):

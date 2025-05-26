@@ -1,9 +1,9 @@
 # test_scheme_monochrome.py
 
 import unittest
-from PyMCUlib.cam.hct import Hct
-from PyMCUlib.scheme.monochrome import SchemeMonochrome
-from PyMCUlib.dynamiccolor.material_dynamic_colors import MaterialDynamicColors
+from PyMCUlib_cpp.cam.hct import Hct
+from PyMCUlib_cpp.scheme.monochrome import SchemeMonochrome
+from PyMCUlib_cpp.dynamiccolor.material_dynamic_colors import MaterialDynamicColors
 
 class TestSchemeMonochrome(unittest.TestCase):
     

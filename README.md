@@ -1,8 +1,11 @@
 
-# PyMCUlib - Material Color Utilities Lib for Python (Ported from Official MCU of C++ version)
+# PyMCUlib-cpp - Material Color Utilities Lib for Python (Ported from Official MCU of C++ version)
 
-### NOTES: Python version: >=3.12.0
+### Python version: >=3.12.0
 
+**_Note:_** In 2025, the official Material Color Utilities library was updated to version 2025 as TypeScript & Java & Dart implementation. This Python package has since been reimplemented based on that latest TypeScript version ([main-ts](https://github.com/wenkang-deepblue/PyMCUlib-Pythonized-material-color-utilities)) and is published on PyPI as the default `PyMCUlib` package (install via `pip install PyMCUlib`). The original C++-based Python port ([main-cpp](https://github.com/wenkang-deepblue/PyMCUlib-Pythonized-material-color-utilities/tree/main-cpp)) has been renamed `PyMCUlib-cpp` and is available via `pip install PyMCUlib-cpp`. Please choose the package that best fits your needs.
+
+## Overview
 This project is a Python port of Google's [Material Color Utilities](https://github.com/material-foundation/material-color-utilities) library, originally implemented in **C++**. The Material Color Utilities (MCU) library provides algorithms and utilities that power the dynamic color system introduced in Material Design 3.
 
 ## Introduction
@@ -31,7 +34,7 @@ Due to fundamental differences between C++ and Python, this port cannot achieve 
 Following the original MCU C++ lib, this Python lib project is organized into several modules (same as original MCU lib), each handling specific aspects of color processing:
 
 ```
-PyMCUlib/
+PyMCUlib_cpp/
 ├── __init__.py                # Package entry point with public APIs
 ├── blend/                     # Color blending utilities
 ├── cam/                       # Color appearance model and HCT color space
@@ -99,7 +102,7 @@ The library consists of various components, each designed to be as self-containe
 Provides utilities for blending colors in the HCT color space, enabling smooth interpolation, harmonization, and gradation of colors.
 
 ```python
-from PyMCUlib.blend import blend_harmonize, blend_hct_hue, blend_cam16_ucs
+from PyMCUlib_cpp.blend import blend_harmonize, blend_hct_hue, blend_cam16_ucs
 
 # Harmonize one color with another
 harmonized_color = blend_harmonize(design_color, key_color)
@@ -113,7 +116,7 @@ mixed_color = blend_hct_hue(from_color, to_color, 0.5)
 Offers tools for measuring contrast and obtaining contrastful colors that meet accessibility requirements.
 
 ```python
-from PyMCUlib.contrast import ratio_of_tones, lighter, darker
+from PyMCUlib_cpp.contrast import ratio_of_tones, lighter, darker
 
 # Calculate contrast ratio between two tones
 contrast_ratio = ratio_of_tones(tone_a, tone_b)
@@ -127,8 +130,8 @@ lighter_tone = lighter(tone, contrast_ratio)
 Identifies and fixes universally disliked colors, based on color science research showing that dark yellow-greens are typically disliked.
 
 ```python
-from PyMCUlib.dislike import is_disliked, fix_if_disliked
-from PyMCUlib.cam.hct import Hct
+from PyMCUlib_cpp.dislike import is_disliked, fix_if_disliked
+from PyMCUlib_cpp.cam.hct import Hct
 
 # Check if a color is disliked
 disliked = is_disliked(Hct.from_int(argb_color))
@@ -142,8 +145,8 @@ fixed_color = fix_if_disliked(Hct.from_int(argb_color))
 Provides colors that adjust based on UI states like dark theme, style preferences, and contrast requirements. This component powers the adaptive capabilities of Material Design 3.
 
 ```python
-from PyMCUlib.dynamiccolor import DynamicColor, DynamicScheme
-from PyMCUlib.dynamiccolor.variant import Variant
+from PyMCUlib_cpp.dynamiccolor import DynamicColor, DynamicScheme
+from PyMCUlib_cpp.dynamiccolor.variant import Variant
 
 # Create a dynamic color based on a scheme
 dynamic_color = DynamicColor.from_palette(
@@ -161,7 +164,7 @@ argb = dynamic_color.get_argb(scheme)
 Implements a new color space (Hue, Chroma, Tone) based on CAM16 and L*, which accounts for viewing conditions and provides a more perceptually accurate color model.
 
 ```python
-from PyMCUlib.cam.hct import Hct
+from PyMCUlib_cpp.cam.hct import Hct
 
 # Create HCT color from RGB
 hct_color = Hct.from_int(0xFF0000FF)  # Blue
@@ -181,7 +184,7 @@ rgb_int = hct_color.to_int()  # Convert back to RGB
 Creates tonal palettes (colors that vary only in tone) and core palettes (sets of tonal palettes needed for Material color schemes).
 
 ```python
-from PyMCUlib.palettes.tones import TonalPalette
+from PyMCUlib_cpp.palettes.tones import TonalPalette
 
 # Create a tonal palette from a color
 palette = TonalPalette(0xFF0000FF)  # Blue
@@ -197,7 +200,7 @@ dark_blue = palette.get(10)
 Extracts dominant colors from images, combining multiple algorithms (Wu quantizer and Weighted Spherical Means) for optimal results.
 
 ```python
-from PyMCUlib.quantize.celebi import quantize_celebi
+from PyMCUlib_cpp.quantize.celebi import quantize_celebi
 
 # Extract key colors from an image's pixels
 pixels = [0xffff0000, 0xff00ff00, 0xff0000ff]  # Example pixels
@@ -209,8 +212,8 @@ result = quantize_celebi(pixels, max_colors=5)
 Generates Material Design color schemes from a single color or core palette, supporting both static and dynamic variants.
 
 ```python
-from PyMCUlib.cam.hct import Hct
-from PyMCUlib.scheme.vibrant import SchemeVibrant
+from PyMCUlib_cpp.cam.hct import Hct
+from PyMCUlib_cpp.scheme.vibrant import SchemeVibrant
 
 # Create a vibrant color scheme from a color
 source_color = Hct.from_int(0xFF0000FF)  # Blue
@@ -226,7 +229,7 @@ secondary_color = vibrant_scheme.get_secondary()
 Ranks colors for suitability in theming, taking into account factors like usage frequency and perceptual characteristics.
 
 ```python
-from PyMCUlib.score.score import ranked_suggestions, ScoreOptions
+from PyMCUlib_cpp.score.score import ranked_suggestions, ScoreOptions
 
 # Rank colors for theming suitability
 colors_with_counts = {
@@ -243,8 +246,8 @@ ranked_colors = ranked_suggestions(colors_with_counts)
 Provides utilities for finding analogous and complementary colors based on color temperature theory.
 
 ```python
-from PyMCUlib.temperature.temperature_cache import TemperatureCache
-from PyMCUlib.cam.hct import Hct
+from PyMCUlib_cpp.temperature.temperature_cache import TemperatureCache
+from PyMCUlib_cpp.cam.hct import Hct
 
 # Create a temperature cache for a color
 temp_cache = TemperatureCache(Hct.from_int(0xFF0000FF))
@@ -267,3 +270,6 @@ This is a personal port created for my own projects. While I've made every effor
 ## Acknowledgments
 
 Special thanks to the original Google Material Color Utilities team for creating this powerful library and making it openly available.
+
+## Very Important
+I have adopted this lib in my own project and it works good. But I didn't verify all modules in my own project. Please report any issue via this [repository issues](https://github.com/wenkang-deepblue/PyMCUlib-Pythonized-material-color-utilities/issues) to let me know bugs. Thank you very much!

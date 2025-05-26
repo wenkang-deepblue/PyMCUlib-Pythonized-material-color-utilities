@@ -1,8 +1,8 @@
 # lab_test.py
 
 import unittest
-from PyMCUlib.quantize.lab import Lab, int_from_lab, lab_from_int
-import PyMCUlib.utils.utils as utils
+from PyMCUlib_cpp.quantize.lab import Lab, int_from_lab, lab_from_int
+import PyMCUlib_cpp.utils.utils as utils
 
 class LabTest(unittest.TestCase):
     def test_lab_from_int(self):

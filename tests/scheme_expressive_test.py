@@ -1,10 +1,10 @@
 # scheme_expressive_test.py
 
 import unittest
-from PyMCUlib.cam.hct import Hct
-from PyMCUlib.scheme.expressive import SchemeExpressive, HUES, SECONDARY_ROTATIONS, TERTIARY_ROTATIONS
-from PyMCUlib.dynamiccolor.variant import Variant
-from PyMCUlib.dynamiccolor.dynamic_scheme import DynamicScheme
+from PyMCUlib_cpp.cam.hct import Hct
+from PyMCUlib_cpp.scheme.expressive import SchemeExpressive, HUES, SECONDARY_ROTATIONS, TERTIARY_ROTATIONS
+from PyMCUlib_cpp.dynamiccolor.variant import Variant
+from PyMCUlib_cpp.dynamiccolor.dynamic_scheme import DynamicScheme
 
 class TestSchemeExpressive(unittest.TestCase):
     def test_expressive_scheme_dark_theme(self):

@@ -6,7 +6,7 @@ import numpy as np
 from io import BytesIO
 import os
 
-from PyMCUlib.utils.image_utils import (
+from PyMCUlib_cpp.utils.image_utils import (
     source_color_from_image,
     source_color_from_image_bytes,
     source_color_from_file,

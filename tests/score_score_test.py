@@ -3,8 +3,8 @@
 import unittest
 from typing import Dict
 
-from PyMCUlib.score.score import ranked_suggestions, ScoreOptions
-from PyMCUlib.utils.utils import Argb
+from PyMCUlib_cpp.score.score import ranked_suggestions, ScoreOptions
+from PyMCUlib_cpp.utils.utils import Argb
 
 class ScoreTest(unittest.TestCase):
     

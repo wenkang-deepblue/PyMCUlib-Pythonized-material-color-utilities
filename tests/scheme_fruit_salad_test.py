@@ -1,10 +1,10 @@
 # test_scheme_fruit_salad.py
 
 import unittest
-from PyMCUlib.cam.hct import Hct
-from PyMCUlib.scheme.fruit_salad import SchemeFruitSalad
-from PyMCUlib.dynamiccolor.variant import Variant
-from PyMCUlib.utils.utils import sanitize_degrees_double
+from PyMCUlib_cpp.cam.hct import Hct
+from PyMCUlib_cpp.scheme.fruit_salad import SchemeFruitSalad
+from PyMCUlib_cpp.dynamiccolor.variant import Variant
+from PyMCUlib_cpp.utils.utils import sanitize_degrees_double
 
 class TestSchemeFruitSalad(unittest.TestCase):
     def test_fruit_salad_scheme_dark_theme(self):

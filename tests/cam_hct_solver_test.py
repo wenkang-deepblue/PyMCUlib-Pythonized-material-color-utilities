@@ -1,9 +1,9 @@
 # hct_solver_test.py
 
 import unittest
-from PyMCUlib.cam.hct_solver import solve_to_int
-from PyMCUlib.cam.cam import cam_from_int
-from PyMCUlib.utils.utils import lstar_from_argb
+from PyMCUlib_cpp.cam.hct_solver import solve_to_int
+from PyMCUlib_cpp.cam.cam import cam_from_int
+from PyMCUlib_cpp.utils.utils import lstar_from_argb
 
 class HctSolverTest(unittest.TestCase):
     

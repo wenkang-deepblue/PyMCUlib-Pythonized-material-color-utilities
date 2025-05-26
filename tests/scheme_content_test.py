@@ -1,11 +1,11 @@
 # scheme_content_test.py
 
 import unittest
-from PyMCUlib.cam.hct import Hct
-from PyMCUlib.scheme.content import SchemeContent
-from PyMCUlib.dynamiccolor.variant import Variant
-from PyMCUlib.temperature.temperature_cache import TemperatureCache
-from PyMCUlib.dislike.dislike import fix_if_disliked
+from PyMCUlib_cpp.cam.hct import Hct
+from PyMCUlib_cpp.scheme.content import SchemeContent
+from PyMCUlib_cpp.dynamiccolor.variant import Variant
+from PyMCUlib_cpp.temperature.temperature_cache import TemperatureCache
+from PyMCUlib_cpp.dislike.dislike import fix_if_disliked
 
 class TestSchemeContent(unittest.TestCase):
     def test_content_scheme_dark_theme(self):

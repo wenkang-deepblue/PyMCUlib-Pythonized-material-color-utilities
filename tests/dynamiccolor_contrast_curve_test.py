@@ -1,7 +1,7 @@
 # test_contrast_curve.py
 
 import unittest
-from PyMCUlib.dynamiccolor.contrast_curve import ContrastCurve
+from PyMCUlib_cpp.dynamiccolor.contrast_curve import ContrastCurve
 
 class TestContrastCurve(unittest.TestCase):
     

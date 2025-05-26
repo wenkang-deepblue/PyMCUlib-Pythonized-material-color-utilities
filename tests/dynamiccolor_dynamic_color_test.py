@@ -1,19 +1,19 @@
 # test_dynamic_color.py
 
 import unittest
-from PyMCUlib.cam.hct import Hct
-from PyMCUlib.dynamiccolor.dynamic_scheme import DynamicScheme
-from PyMCUlib.dynamiccolor.dynamic_color import (
+from PyMCUlib_cpp.cam.hct import Hct
+from PyMCUlib_cpp.dynamiccolor.dynamic_scheme import DynamicScheme
+from PyMCUlib_cpp.dynamiccolor.dynamic_color import (
     DynamicColor, foreground_tone, enable_light_foreground,
     tone_prefers_light_foreground, tone_allows_light_foreground
 )
-from PyMCUlib.contrast.contrast import (
+from PyMCUlib_cpp.contrast.contrast import (
     ratio_of_tones, lighter, darker, lighter_unsafe, darker_unsafe
 )
-from PyMCUlib.dynamiccolor.contrast_curve import ContrastCurve
-from PyMCUlib.dynamiccolor.tone_delta_pair import ToneDeltaPair, TonePolarity
-from PyMCUlib.palettes.tones import TonalPalette
-from PyMCUlib.dynamiccolor.variant import Variant
+from PyMCUlib_cpp.dynamiccolor.contrast_curve import ContrastCurve
+from PyMCUlib_cpp.dynamiccolor.tone_delta_pair import ToneDeltaPair, TonePolarity
+from PyMCUlib_cpp.palettes.tones import TonalPalette
+from PyMCUlib_cpp.dynamiccolor.variant import Variant
 
 class TestDynamicColorFunctions(unittest.TestCase):
     def test_foreground_tone(self):

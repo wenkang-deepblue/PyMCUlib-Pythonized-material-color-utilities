@@ -1,9 +1,9 @@
 # tones_test.py
 
 import unittest
-from PyMCUlib.palettes.tones import TonalPalette, KeyColor
-from PyMCUlib.cam.hct import Hct
-from PyMCUlib.utils.utils import hex_from_argb
+from PyMCUlib_cpp.palettes.tones import TonalPalette, KeyColor
+from PyMCUlib_cpp.cam.hct import Hct
+from PyMCUlib_cpp.utils.utils import hex_from_argb
 
 class TonesTest(unittest.TestCase):
     def test_blue(self):

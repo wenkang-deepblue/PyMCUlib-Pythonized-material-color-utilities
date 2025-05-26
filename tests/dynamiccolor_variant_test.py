@@ -1,7 +1,7 @@
 # test_variant.py
 
 import unittest
-from PyMCUlib.dynamiccolor.variant import Variant
+from PyMCUlib_cpp.dynamiccolor.variant import Variant
 
 class TestVariant(unittest.TestCase):
     

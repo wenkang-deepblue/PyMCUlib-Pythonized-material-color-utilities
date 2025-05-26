@@ -1,10 +1,10 @@
 # test_dynamic_scheme.py
 
 import unittest
-from PyMCUlib.cam.hct import Hct
-from PyMCUlib.dynamiccolor.variant import Variant
-from PyMCUlib.palettes.tones import TonalPalette
-from PyMCUlib.dynamiccolor.dynamic_scheme import DynamicScheme
+from PyMCUlib_cpp.cam.hct import Hct
+from PyMCUlib_cpp.dynamiccolor.variant import Variant
+from PyMCUlib_cpp.palettes.tones import TonalPalette
+from PyMCUlib_cpp.dynamiccolor.dynamic_scheme import DynamicScheme
 
 class TestDynamicScheme(unittest.TestCase):
     

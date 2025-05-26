@@ -1,8 +1,8 @@
 # cam_test.py
 
 import unittest
-from PyMCUlib.cam.cam import Cam, cam_from_int, int_from_cam
-from PyMCUlib.utils.utils import hex_from_argb
+from PyMCUlib_cpp.cam.cam import Cam, cam_from_int, int_from_cam
+from PyMCUlib_cpp.utils.utils import hex_from_argb
 
 class CamTest(unittest.TestCase):
     

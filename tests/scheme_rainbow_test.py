@@ -1,10 +1,10 @@
 # test_scheme_rainbow.py
 
 import unittest
-from PyMCUlib.cam.hct import Hct
-from PyMCUlib.scheme.rainbow import SchemeRainbow
-from PyMCUlib.dynamiccolor.variant import Variant
-from PyMCUlib.utils.utils import sanitize_degrees_double
+from PyMCUlib_cpp.cam.hct import Hct
+from PyMCUlib_cpp.scheme.rainbow import SchemeRainbow
+from PyMCUlib_cpp.dynamiccolor.variant import Variant
+from PyMCUlib_cpp.utils.utils import sanitize_degrees_double
 
 class TestSchemeRainbow(unittest.TestCase):
     def test_initialization(self):

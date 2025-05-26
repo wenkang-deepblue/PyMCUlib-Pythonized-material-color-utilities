@@ -1,7 +1,7 @@
 # test_tone_delta_pair.py
 
 import unittest
-from PyMCUlib.dynamiccolor.tone_delta_pair import TonePolarity, ToneDeltaPair
+from PyMCUlib_cpp.dynamiccolor.tone_delta_pair import TonePolarity, ToneDeltaPair
 
 # Mock DynamicColor for testing
 class MockDynamicColor:
