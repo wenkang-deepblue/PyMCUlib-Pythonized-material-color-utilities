@@ -272,4 +272,4 @@ This is a personal port created for my own projects. While I've made every effor
 Special thanks to the original Google Material Color Utilities team for creating this powerful library and making it openly available.
 
 ## Very Important
-I have adopted this lib in my own project and it works good. But I didn't verify all modules in my own project. Please report any issue via this [repository issues](https://github.com/wenkang-deepblue/PyMCUlib-Pythonized-material-color-utilities/issues) to let me know bugs. Thank you very much!
+I have adopted this lib in my own project and it works well. But I didn't verify all modules in my own project. Please report any issue via this [repository issues](https://github.com/wenkang-deepblue/PyMCUlib-Pythonized-material-color-utilities/issues) to let me know bugs. Thank you very much!
