@@ -107,16 +107,20 @@ scheme = DynamicScheme({
     'platform': 'phone'          # (optional, defaults to 'phone')
 })
 
-# 3. Define a custom DynamicColor
-accent = DynamicColor.from_palette({
+# 3. (Standard) Access predefined theme colors
+primary_color = scheme.primary
+print(f"Scheme Primary Color: {hex(primary_color)}")
+
+# 4. (Advanced) Define and use a custom DynamicColor
+custom_accent = DynamicColor.from_palette({
     'name': 'custom_accent',
-    'palette': lambda s: s.primary_palette,
-    'tone':   lambda s: 40.0
+    'palette': lambda s: s.primary_palette, # Uses the scheme's primary palette
+    'tone':   lambda s: 40.0,
 })
 
-# 4. Get its ARGB value
-argb = accent.get_argb(scheme)
-print(hex(argb))  # → 0xffxxxxxx
+# 5. Get the ARGB value for the custom color
+custom_argb = accent.get_argb(scheme)
+print(f"Custom Accent Color: {hex(custom_argb)}")
 ```
 
 ## Components & Usage Examples

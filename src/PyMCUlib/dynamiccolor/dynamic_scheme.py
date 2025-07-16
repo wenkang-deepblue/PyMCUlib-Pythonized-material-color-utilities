@@ -657,7 +657,7 @@ class DynamicScheme:
         Returns:
             An ARGB color as an integer.
         """
-        return self.get_argb(self.colors.primary_fixed)
+        return self.get_argb(self.colors.primary_fixed())
 
     @property
     def primary_fixed_dim(self) -> int:
@@ -667,7 +667,7 @@ class DynamicScheme:
         Returns:
             An ARGB color as an integer.
         """
-        return self.get_argb(self.colors.primary_fixed_dim)
+        return self.get_argb(self.colors.primary_fixed_dim())
 
     @property
     def on_primary_fixed(self) -> int:
@@ -677,7 +677,7 @@ class DynamicScheme:
         Returns:
             An ARGB color as an integer.
         """
-        return self.get_argb(self.colors.on_primary_fixed)
+        return self.get_argb(self.colors.on_primary_fixed())
 
     @property
     def on_primary_fixed_variant(self) -> int:
@@ -687,7 +687,7 @@ class DynamicScheme:
         Returns:
             An ARGB color as an integer.
         """
-        return self.get_argb(self.colors.on_primary_fixed_variant)
+        return self.get_argb(self.colors.on_primary_fixed_variant())
 
     @property
     def inverse_primary(self) -> int:
@@ -765,7 +765,7 @@ class DynamicScheme:
         Returns:
             An ARGB color as an integer.
         """
-        return self.get_argb(self.colors.secondary_fixed)
+        return self.get_argb(self.colors.secondary_fixed())
 
     @property
     def secondary_fixed_dim(self) -> int:
@@ -775,7 +775,7 @@ class DynamicScheme:
         Returns:
             An ARGB color as an integer.
         """
-        return self.get_argb(self.colors.secondary_fixed_dim)
+        return self.get_argb(self.colors.secondary_fixed_dim())
 
     @property
     def on_secondary_fixed(self) -> int:
@@ -785,7 +785,7 @@ class DynamicScheme:
         Returns:
             An ARGB color as an integer.
         """
-        return self.get_argb(self.colors.on_secondary_fixed)
+        return self.get_argb(self.colors.on_secondary_fixed())
 
     @property
     def on_secondary_fixed_variant(self) -> int:
@@ -795,7 +795,7 @@ class DynamicScheme:
         Returns:
             An ARGB color as an integer.
         """
-        return self.get_argb(self.colors.on_secondary_fixed_variant)
+        return self.get_argb(self.colors.on_secondary_fixed_variant())
 
     # Tertiary colors
 
@@ -863,7 +863,7 @@ class DynamicScheme:
         Returns:
             An ARGB color as an integer.
         """
-        return self.get_argb(self.colors.tertiary_fixed)
+        return self.get_argb(self.colors.tertiary_fixed())
 
     @property
     def tertiary_fixed_dim(self) -> int:
@@ -873,7 +873,7 @@ class DynamicScheme:
         Returns:
             An ARGB color as an integer.
         """
-        return self.get_argb(self.colors.tertiary_fixed_dim)
+        return self.get_argb(self.colors.tertiary_fixed_dim())
 
     @property
     def on_tertiary_fixed(self) -> int:
@@ -883,7 +883,7 @@ class DynamicScheme:
         Returns:
             An ARGB color as an integer.
         """
-        return self.get_argb(self.colors.on_tertiary_fixed)
+        return self.get_argb(self.colors.on_tertiary_fixed())
 
     @property
     def on_tertiary_fixed_variant(self) -> int:
@@ -893,7 +893,7 @@ class DynamicScheme:
         Returns:
             An ARGB color as an integer.
         """
-        return self.get_argb(self.colors.on_tertiary_fixed_variant)
+        return self.get_argb(self.colors.on_tertiary_fixed_variant())
 
     # Error colors
 

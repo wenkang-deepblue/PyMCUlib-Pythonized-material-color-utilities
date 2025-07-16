@@ -16,3 +16,6 @@ __pycache__/
 dist/
 .pypirc
 *test*.*
+comparation.py
+*old.py
+bug*.*

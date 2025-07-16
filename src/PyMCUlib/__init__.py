@@ -5,7 +5,7 @@ A Python library for color operations and conversions, providing the HCT color s
 CAM16 color appearance model, and color blending tools.
 """
 
-__version__ = "1.0.1"
+__version__ = "1.0.3"
 
 # --- blend ---
 from PyMCUlib.blend import Blend
